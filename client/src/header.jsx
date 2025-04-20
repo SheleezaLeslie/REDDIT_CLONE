@@ -93,7 +93,7 @@ function Header() {
                     Profile
                   </Link>
                   <button
-                    className='block flex w-50 py-2 px-3 hover:bg-gray-300 hover:text-black 
+                    className='flex w-50 py-2 px-3 hover:bg-gray-300 hover:text-black 
          overflow-hidden text-sm '
                     onClick={() => user.logout()}
                   >
@@ -105,7 +105,7 @@ function Header() {
               )}
               {!user.username && (
                 <button
-                  className='block flex w-50 py-2 px-3 hover:bg-gray-300 hover:text-black 
+                  className='flex w-50 py-2 px-3 hover:bg-gray-300 hover:text-black 
            overflow-hidden text-sm '
                   onClick={() => authModal.setShow('login')}
                 >
