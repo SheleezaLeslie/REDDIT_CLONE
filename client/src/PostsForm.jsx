@@ -51,7 +51,7 @@ const PostsForm = () => {
 
     const postData = {
       ...form,
-      author: `u/${user.username}`,
+      author: `${user.username}`,
       userId: user._id,
     };
   
@@ -62,7 +62,7 @@ const PostsForm = () => {
     } else {
       await createPost({
         ...form,
-        author: `u/${user.username}`,
+        author: `${user.username}`,
         userId: user._id,
       });
       
@@ -74,7 +74,7 @@ const PostsForm = () => {
   if (isEdit && loadingPost) return <p className="text-white px-6">Loading post data...</p>;
 
   return (
-    <div className="px-6 py-8">
+    <div className="px-6 py-8 bg-reddit_dark">
       <form
         onSubmit={handleSubmit}
         className="space-y-4 max-w-2xl mx-auto bg-reddit_dark-brighter p-6 rounded-md border border-reddit_border text-white"

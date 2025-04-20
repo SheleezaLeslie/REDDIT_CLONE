@@ -5,7 +5,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 import postRouter from './routes/post_router.js';
-import userRouter from './routes/user_router.js'; // 👈 import user routes
+import userRouter from './routes/user_router.js';
 import commentRouter from './routes/comment_router.js';
 
 dotenv.config();
@@ -22,7 +22,7 @@ app.use(json()); // to parse JSON bodies
 app.use(cookieParser()); // to handle cookies
 
 // Routes
-app.use("/comment", commentRouter); //comment & votes routes
+app.use("api/comment", commentRouter); //comment & votes routes
 app.use("/api/user", userRouter); //log and register routes
 app.use('/api/posts', postRouter);
 

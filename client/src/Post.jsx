@@ -19,10 +19,10 @@ const Post = ({ post, fullView = false }) => {
 
     if (!post) return <div>Post not found</div>; // In case there's no post data available
 
-    const formattedDate = new Date(post.postedAt).toLocaleString();  // Handle the date correctly
+    const formattedDate = new Date(post.createdAt).toLocaleString();  // Handle the date correctly
 
     return (
-        <div className="border border-reddit_border bg-reddit_dark-brighter p-4 mb-4 rounded-md">
+        <div className="border border-reddit_border bg-reddit_dark-brighter p-4 mb-4 rounded-md break-words whitespace-pre-wrap">
             <h1 className="text-2xl font-bold text-reddit_text mb-3">
                 {post.title}
             </h1>

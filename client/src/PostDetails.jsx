@@ -5,16 +5,16 @@ const PostDetails = ({ post }) => {
   if (!post) return null;
 
   return (
-    <div className="post-item border-b border-reddit_border bg-reddit_dark-brighter p-4 mb-4 rounded-md hover:bg-reddit_dark-brightest transition">
+    <div className="post-item border border-reddit_border hover:border-reddit_text bg-reddit_dark-brighter p-4 mb-4 rounded-md hover:bg-reddit_dark-brightest transition">
       {/* Entire card links to the post page */}
       <Link to={`/post/${post._id}`} className="block mb-2">
         <h3 className="text-xl font-semibold text-reddit_text mb-1">
           {post.title}
         </h3>
         <p className="text-sm text-reddit_text-darker mb-1">
-          Posted by u/{post.author} • {new Date(post.postedAt).toLocaleString()}
+          Posted by u/{post.author} • {new Date(post.createdAt).toLocaleString()}
         </p>
-        <p className="text-sm text-reddit_text">
+        <p className="text-sm text-reddit_text break-words whitespace-pre-wrap">
           {post.body?.slice(0, 200)}{post.body?.length > 200 && '...'}
         </p>
       </Link>

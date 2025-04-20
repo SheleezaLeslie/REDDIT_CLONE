@@ -16,21 +16,16 @@ postRouter.get('/', async (req, res) => {
 
 // create a post
 postRouter.post('/', async (req, res) => {
-  console.log('➡️ Route is being hit!'); // This should log when the post request is made.
-  console.log('➡️ Received Post Data:', req.body); //
-  console.log('➡️ Received Post Data:', req.body); // Log the incoming request body
   try {
     const newPost = new Posts(req.body); // Ensure this is a valid Post object
     const savedPost = await newPost.save();
     console.log('Post to be saved:', newPost);
-    console.log('✅ Post saved:', savedPost); // Log the saved post to verify
     res.status(201).json(savedPost);
   } catch (err) {
     console.error('❌ Error creating post:', err.message);
     res.status(500).json({ error: 'Failed to create post' });
   }
 });
-
 
 // Get a post by ID
 postRouter.get('/:id', async (req, res) => {
